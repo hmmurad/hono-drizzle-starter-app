@@ -1,0 +1,29 @@
+// eslint.config.js
+import antfu from "@antfu/eslint-config";
+
+export default antfu(
+    {
+      type: "lib",
+      typescript: true,
+      formatters: true,
+      lessOpinionated: true,
+      stylistic: {
+        indent: 2,
+        semi: true,
+        quotes: "double",
+      },
+    },
+    {
+      rules: {
+        "func-style": ["error", "expression"],
+        "ts/explicit-function-return-type": "off",
+
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            tsconfig: "./tsconfig.json",
+          },
+        ],
+      },
+    },
+);
